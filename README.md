@@ -62,7 +62,7 @@ gcc server.c -o server
 🔹 Compile Client
 gcc client.c -o client
 
-▶️ How to Run
+##▶️ How to Run
 Step 1: Start Server
 ./server
 
@@ -78,7 +78,8 @@ Expected output:
 
 Client Successfully connected with server
 Data from server is : Jay Ganesh from server
-🔍 Important Concepts Covered
+---
+##🔍 Important Concepts Covered
 1️⃣ socket()
 
 Creates a communication endpoint.
@@ -102,8 +103,8 @@ Client connects to server.
 6️⃣ read() / write()
 
 Used for sending and receiving data.
-
-📚 Learning Outcome
+---
+##📚 Learning Outcome
 
 After completing this project, I understood:
 
@@ -116,7 +117,8 @@ Socket lifecycle in Linux
 Network byte order
 
 Blocking I/O behavior
+---
 
-👨‍💻 Author
+##👨‍💻 Author
 
 Suyash Patil
