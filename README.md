@@ -1,68 +1,67 @@
-🖧 TCP Socket Programming in C (Server–Client Communication)
+# 🖧 TCP Socket Programming in C (Server–Client Communication)
 
-This project demonstrates basic TCP socket communication using the C programming language on Linux.
+This project demonstrates basic **TCP socket communication** using the **C programming language on Linux**.
 
 It includes:
 
-A TCP Server
+- A TCP Server  
+- A TCP Client  
+- Communication using IPv4 (`AF_INET`)  
+- Blocking sockets  
+- Basic message transmission  
 
-A TCP Client
+---
 
-Communication using IPv4 (AF_INET)
+## 📌 Project Overview
 
-Blocking sockets
+### 🔹 The Server:
 
-Basic message transmission
+- Creates a TCP socket  
+- Binds to a port (11000)  
+- Listens for incoming connections  
+- Accepts a client  
+- Sends a message to the client  
 
-📌 Project Overview
+### 🔹 The Client:
 
-The server:
+- Creates a TCP socket  
+- Connects to the server (`127.0.0.1:11000`)  
+- Reads data sent by the server  
+- Prints the received message  
 
-Creates a TCP socket
+---
 
-Binds to a port (11000)
+## 🏗️ Technologies Used
 
-Listens for incoming connections
+- C Programming  
+- POSIX Socket API  
+- Linux / Ubuntu  
+- IPv4 (`AF_INET`)  
+- TCP (`SOCK_STREAM`)  
 
-Accepts a client
+---
 
-Sends a message to the client
+## 📂 Project Structure
 
-The client:
 
-Creates a TCP socket
-
-Connects to the server (127.0.0.1:11000)
-
-Reads data sent by the server
-
-Prints the received message
-
-🏗️ Technologies Used
-
-C Programming
-
-POSIX Socket API
-
-Linux / Ubuntu
-
-IPv4 (AF_INET)
-
-TCP (SOCK_STREAM)
-
-📂 Project Structure
 .
 ├── server.c
 ├── client.c
 └── README.md
-⚙️ How to Compile
 
-Open terminal in project directory:
 
-Compile Server
+---
+
+## ⚙️ How to Compile
+
+Open terminal in the project directory:
+
+### 🔹 Compile Server
+```bash```
 gcc server.c -o server
-Compile Client
+🔹 Compile Client
 gcc client.c -o client
+
 ▶️ How to Run
 Step 1: Start Server
 ./server
@@ -104,8 +103,6 @@ Client connects to server.
 
 Used for sending and receiving data.
 
-
-
 📚 Learning Outcome
 
 After completing this project, I understood:
@@ -123,7 +120,3 @@ Blocking I/O behavior
 👨‍💻 Author
 
 Suyash Patil
-
-
-
-
