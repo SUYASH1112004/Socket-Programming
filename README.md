@@ -1,124 +1,111 @@
 # 🖧 TCP Socket Programming in C (Server–Client Communication)
 
-This project demonstrates basic **TCP socket communication** using the **C programming language on Linux**.
-
-It includes:
-
-- A TCP Server  
-- A TCP Client  
-- Communication using IPv4 (`AF_INET`)  
-- Blocking sockets  
-- Basic message transmission  
+This project demonstrates basic **TCP socket communication** using the **C programming language on Linux**. It covers the fundamental lifecycle of a network connection, from socket creation to data transmission.
 
 ---
 
 ## 📌 Project Overview
 
-### 🔹 The Server:
+The application consists of two main components communicating over a local network loopback (`127.0.0.1`).
 
-- Creates a TCP socket  
-- Binds to a port (11000)  
-- Listens for incoming connections  
-- Accepts a client  
-- Sends a message to the client  
+### 🔹 The Server
+- Creates a TCP socket.
+- Binds to a specific port (**11000**).
+- Listens for incoming connection requests.
+- Accepts a client and sends a "Jay Ganesh" greeting.
 
-### 🔹 The Client:
-
-- Creates a TCP socket  
-- Connects to the server (`127.0.0.1:11000`)  
-- Reads data sent by the server  
-- Prints the received message  
+### 🔹 The Client
+- Creates a TCP socket.
+- Connects to the server's IP and port.
+- Reads the incoming data stream.
+- Prints the received message to the console.
 
 ---
 
 ## 🏗️ Technologies Used
 
-- C Programming  
-- POSIX Socket API  
-- Linux / Ubuntu  
-- IPv4 (`AF_INET`)  
-- TCP (`SOCK_STREAM`)  
+* **Language:** C
+* **API:** POSIX Socket API
+* **Protocol:** TCP (`SOCK_STREAM`)
+* **Address Family:** IPv4 (`AF_INET`)
+* **Environment:** Linux / Ubuntu
 
 ---
 
 ## 📂 Project Structure
 
-
+```text
 .
-├── server.c
-├── client.c
-└── README.md
+├── server.c      # The passive listener (Server)
+├── client.c      # The active connector (Client)
+└── README.md     # Documentation
+```
 
+⚙️ How to Compile
 
----
+Open your terminal in the project directory and run:
+1. Compile Server
+Bash
 
-## ⚙️ How to Compile
-
-Open terminal in the project directory:
-
-### 🔹 Compile Server
-```bash```
 gcc server.c -o server
-🔹 Compile Client
+
+2. Compile Client
+Bash
+
 gcc client.c -o client
 
-##▶️ How to Run
-Step 1: Start Server
+▶️ How to Run
+
+Follow these steps in order:
+Step 1: Start the Server
+Bash
+
 ./server
 
-Expected output:
+Expected Output:
+Plaintext
 
 Socket gets created successfully
 Bind operation with socket is successful
 Server is live at port 11000
-Step 2: Run Client (in another terminal)
+
+Step 2: Run the Client (In a new terminal tab)
+Bash
+
 ./client
 
-Expected output:
+Expected Output:
+Plaintext
 
 Client Successfully connected with server
 Data from server is : Jay Ganesh from server
----
-##🔍 Important Concepts Covered
-1️⃣ socket()
 
-Creates a communication endpoint.
+🔍 Important Concepts Covered
 
-2️⃣ bind()
+    socket(): Creates the communication endpoint.
 
-Associates socket with IP address and port.
+    bind(): Assigns the IP address and Port to the socket.
 
-3️⃣ listen()
+    listen(): Puts the server in passive mode to wait for clients.
 
-Marks socket as passive (ready to accept connections).
+    accept(): Extracts the connection request and creates a new socket for data.
 
-4️⃣ accept()
+    connect(): The client-side call to establish a link to the server.
 
-Accepts client connection and creates a new socket.
+    read() / write(): Functions used to exchange raw bytes over the connection.
 
-5️⃣ connect()
+📚 Learning Outcomes
 
-Client connects to server.
+By exploring this code, you will understand:
 
-6️⃣ read() / write()
+    The Client-Server architecture model.
 
-Used for sending and receiving data.
----
-##📚 Learning Outcome
+    How the Linux kernel manages network file descriptors.
 
-After completing this project, I understood:
+    Handling Network Byte Order (big-endian) vs Host Byte Order.
 
-Basic TCP communication
+    The difference between Connection-oriented (TCP) and Connectionless (UDP) logic.
 
-How client-server architecture works
-
-Socket lifecycle in Linux
-
-Network byte order
-
-Blocking I/O behavior
----
-
-##👨‍💻 Author
+👨‍💻 Author
 
 Suyash Patil
